@@ -1,7 +1,5 @@
 package me.zombie_striker.qg.handlers;
 
-import me.zombie_striker.customitemmanager.OLD_ItemFact;
-
 import me.zombie_striker.qg.guns.Gun;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

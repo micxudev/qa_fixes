@@ -1,12 +1,12 @@
 package me.zombie_striker.qg.config;
 
+import me.zombie_striker.qg.QAMain;
+import org.bukkit.configuration.file.FileConfiguration;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
-
-import me.zombie_striker.qg.QAMain;
-import org.bukkit.configuration.file.FileConfiguration;
 
 public class MessagesYML {
 

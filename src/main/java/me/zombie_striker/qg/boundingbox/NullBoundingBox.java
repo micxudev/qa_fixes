@@ -1,9 +1,7 @@
 package me.zombie_striker.qg.boundingbox;
 
-import me.zombie_striker.qg.handlers.BoundingBoxUtil;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Player;
 
 public class NullBoundingBox implements AbstractBoundingBox{
 	

@@ -1,6 +1,5 @@
 package me.zombie_striker.qg.config;
 
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 

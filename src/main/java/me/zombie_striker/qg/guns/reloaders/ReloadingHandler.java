@@ -1,8 +1,7 @@
 package me.zombie_striker.qg.guns.reloaders;
 
-import org.bukkit.entity.Player;
-
 import me.zombie_striker.qg.guns.Gun;
+import org.bukkit.entity.Player;
 
 public interface ReloadingHandler {
 

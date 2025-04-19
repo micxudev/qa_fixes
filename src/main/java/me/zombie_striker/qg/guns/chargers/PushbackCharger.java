@@ -1,5 +1,7 @@
 package me.zombie_striker.qg.guns.chargers;
 
+import me.zombie_striker.qg.guns.Gun;
+import me.zombie_striker.qg.guns.utils.GunUtil;
 import me.zombie_striker.qg.guns.utils.WeaponSounds;
 import org.bukkit.Location;
 import org.bukkit.entity.Damageable;
@@ -7,9 +9,6 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
-
-import me.zombie_striker.qg.guns.Gun;
-import me.zombie_striker.qg.guns.utils.GunUtil;
 
 public class PushbackCharger implements ChargingHandler {
 

@@ -1,11 +1,10 @@
 package me.zombie_striker.qg.armor;
 
 
+import me.zombie_striker.qg.api.QualityArmory;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
-
-import me.zombie_striker.qg.api.QualityArmory;
 
 public class BulletProtectionUtil {
 

@@ -10,8 +10,6 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.Listener;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.InvocationTargetException;
-
 public abstract class AntiCheatHook implements Listener {
 
     public AntiCheatHook() {

@@ -1,9 +1,8 @@
 package me.zombie_striker.qg.guns.chargers;
 
+import me.zombie_striker.qg.guns.Gun;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-
-import me.zombie_striker.qg.guns.Gun;
 
 public interface ChargingHandler {
 

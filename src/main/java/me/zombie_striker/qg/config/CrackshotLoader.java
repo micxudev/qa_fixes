@@ -1,27 +1,27 @@
 package me.zombie_striker.qg.config;
 
+import me.zombie_striker.customitemmanager.MaterialStorage;
+import me.zombie_striker.qg.QAMain;
+import me.zombie_striker.qg.ammo.AmmoType;
+import me.zombie_striker.qg.api.QualityArmory;
+import me.zombie_striker.qg.guns.Gun;
+import me.zombie_striker.qg.guns.chargers.ChargingHandler;
+import me.zombie_striker.qg.guns.chargers.ChargingManager;
+import me.zombie_striker.qg.guns.projectiles.ProjectileManager;
+import me.zombie_striker.qg.guns.reloaders.ReloadingHandler;
+import me.zombie_striker.qg.guns.reloaders.ReloadingManager;
+import me.zombie_striker.qg.guns.utils.WeaponSounds;
+import me.zombie_striker.qg.guns.utils.WeaponType;
+import me.zombie_striker.qg.utils.LocalUtils;
+import org.bukkit.Material;
+import org.bukkit.Particle;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.inventory.ItemStack;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import me.zombie_striker.qg.utils.LocalUtils;
-import org.bukkit.*;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.inventory.ItemStack;
-
-import me.zombie_striker.qg.QAMain;
-import me.zombie_striker.customitemmanager.MaterialStorage;
-import me.zombie_striker.qg.ammo.AmmoType;
-import me.zombie_striker.qg.api.QualityArmory;
-import me.zombie_striker.qg.guns.Gun;
-import me.zombie_striker.qg.guns.projectiles.ProjectileManager;
-import me.zombie_striker.qg.guns.utils.WeaponSounds;
-import me.zombie_striker.qg.guns.utils.WeaponType;
-import me.zombie_striker.qg.guns.chargers.ChargingHandler;
-import me.zombie_striker.qg.guns.chargers.ChargingManager;
-import me.zombie_striker.qg.guns.reloaders.ReloadingHandler;
-import me.zombie_striker.qg.guns.reloaders.ReloadingManager;
 
 public class CrackshotLoader {
 

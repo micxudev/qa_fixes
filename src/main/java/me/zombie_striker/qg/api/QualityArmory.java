@@ -1,12 +1,19 @@
 package me.zombie_striker.qg.api;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map.Entry;
-
-import me.zombie_striker.customitemmanager.*;
+import me.zombie_striker.customitemmanager.CustomBaseObject;
+import me.zombie_striker.customitemmanager.CustomItemManager;
+import me.zombie_striker.customitemmanager.MaterialStorage;
+import me.zombie_striker.customitemmanager.OLD_ItemFact;
+import me.zombie_striker.qg.QAMain;
+import me.zombie_striker.qg.ammo.Ammo;
+import me.zombie_striker.qg.armor.ArmorObject;
+import me.zombie_striker.qg.attachments.AttachmentBase;
+import me.zombie_striker.qg.config.GunYML;
+import me.zombie_striker.qg.config.GunYMLCreator;
+import me.zombie_striker.qg.config.GunYMLLoader;
+import me.zombie_striker.qg.guns.Gun;
+import me.zombie_striker.qg.guns.utils.WeaponSounds;
+import me.zombie_striker.qg.guns.utils.WeaponType;
 import me.zombie_striker.qg.handlers.HotbarMessager;
 import me.zombie_striker.qg.handlers.IronsightsHandler;
 import me.zombie_striker.qg.hooks.protection.ProtectionHandler;
@@ -21,19 +28,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
-
-import me.zombie_striker.qg.*;
-import me.zombie_striker.qg.ammo.Ammo;
-import me.zombie_striker.qg.armor.ArmorObject;
-import me.zombie_striker.qg.attachments.AttachmentBase;
-import me.zombie_striker.qg.config.GunYML;
-import me.zombie_striker.qg.config.GunYMLCreator;
-import me.zombie_striker.qg.config.GunYMLLoader;
-import me.zombie_striker.qg.guns.Gun;
-import me.zombie_striker.qg.guns.utils.WeaponSounds;
-import me.zombie_striker.qg.guns.utils.WeaponType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map.Entry;
 
 public class QualityArmory {
 

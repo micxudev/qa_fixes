@@ -1,11 +1,10 @@
 package me.zombie_striker.qg.api;
 
+import me.zombie_striker.qg.guns.Gun;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-
-import me.zombie_striker.qg.guns.Gun;
 
 public class QAWeaponPrepareShootEvent extends Event implements Cancellable {
 	private static final HandlerList handlers = new HandlerList();

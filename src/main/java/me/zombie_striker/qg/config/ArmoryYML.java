@@ -1,16 +1,15 @@
 package me.zombie_striker.qg.config;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
-
-import org.bukkit.Material;
-import org.bukkit.configuration.file.FileConfiguration;
-
 import me.zombie_striker.qg.ammo.Ammo;
 import me.zombie_striker.qg.guns.utils.WeaponSounds;
 import me.zombie_striker.qg.guns.utils.WeaponType;
 import me.zombie_striker.qg.handlers.MultiVersionLookup;
+import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
 public class ArmoryYML {
 

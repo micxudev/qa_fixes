@@ -1,17 +1,15 @@
 package me.zombie_striker.qg.config;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-
 import me.zombie_striker.customitemmanager.MaterialStorage;
 import me.zombie_striker.qg.ammo.Ammo;
 import me.zombie_striker.qg.guns.Gun;
 import me.zombie_striker.qg.guns.utils.WeaponSounds;
 import me.zombie_striker.qg.guns.utils.WeaponType;
+import org.bukkit.Material;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GunYMLCreator {
 

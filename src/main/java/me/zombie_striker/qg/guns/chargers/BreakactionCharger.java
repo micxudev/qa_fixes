@@ -1,16 +1,15 @@
 package me.zombie_striker.qg.guns.chargers;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
-
+import me.zombie_striker.qg.QAMain;
+import me.zombie_striker.qg.guns.Gun;
+import me.zombie_striker.qg.guns.utils.WeaponSounds;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import me.zombie_striker.qg.QAMain;
-import me.zombie_striker.qg.guns.Gun;
-import me.zombie_striker.qg.guns.utils.WeaponSounds;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 public class BreakactionCharger implements ChargingHandler {
 

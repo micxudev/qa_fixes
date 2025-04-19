@@ -1,8 +1,9 @@
 package me.zombie_striker.qg.miscitems;
 
-import java.util.List;
-
 import com.cryptomorin.xseries.particles.XParticle;
+import me.zombie_striker.customitemmanager.MaterialStorage;
+import me.zombie_striker.qg.QAMain;
+import me.zombie_striker.qg.guns.utils.WeaponSounds;
 import org.bukkit.Effect;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
@@ -14,9 +15,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import me.zombie_striker.qg.QAMain;
-import me.zombie_striker.customitemmanager.MaterialStorage;
-import me.zombie_striker.qg.guns.utils.WeaponSounds;
+import java.util.List;
 
 public class Flashbang extends Grenade {
 

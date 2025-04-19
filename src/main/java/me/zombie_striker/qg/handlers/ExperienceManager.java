@@ -1,10 +1,10 @@
 package me.zombie_striker.qg.handlers;
 
+import org.bukkit.entity.Player;
+
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import java.util.Objects;
-
-import org.bukkit.entity.Player;
 
 /**
  * @author desht

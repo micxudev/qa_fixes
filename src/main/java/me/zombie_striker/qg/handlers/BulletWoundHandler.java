@@ -1,10 +1,7 @@
 package me.zombie_striker.qg.handlers;
 
-import java.util.HashMap;
-import java.util.Map.Entry;
-import java.util.UUID;
-
 import com.cryptomorin.xseries.XPotion;
+import me.zombie_striker.qg.QAMain;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
@@ -12,7 +9,9 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
-import me.zombie_striker.qg.QAMain;
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.UUID;
 
 public class BulletWoundHandler {
 

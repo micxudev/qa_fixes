@@ -6,7 +6,6 @@ import me.zombie_striker.qg.armor.ArmorObject;
 import me.zombie_striker.qg.guns.Gun;
 import me.zombie_striker.qg.handlers.IronsightsHandler;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;

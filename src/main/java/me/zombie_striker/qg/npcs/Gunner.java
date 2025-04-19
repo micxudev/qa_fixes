@@ -1,18 +1,16 @@
 package me.zombie_striker.qg.npcs;
 
 import me.zombie_striker.customitemmanager.CustomItemManager;
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Player;
-
-import me.zombie_striker.customitemmanager.OLD_ItemFact;
 import me.zombie_striker.qg.QAMain;
 import me.zombie_striker.qg.guns.Gun;
 import me.zombie_striker.qg.npcs.goals.Gunnergoal;
 import net.citizensnpcs.api.CitizensAPI;
 import net.citizensnpcs.api.npc.NPC;
 import net.citizensnpcs.npc.skin.SkinnableEntity;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
 
 public class Gunner {
 

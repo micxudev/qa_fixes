@@ -1,11 +1,10 @@
 package me.zombie_striker.qg.handlers;
 
 import me.zombie_striker.customitemmanager.CustomBaseObject;
+import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
-
-import net.milkbowl.vault.economy.Economy;
 
 public class EconHandler {
 	

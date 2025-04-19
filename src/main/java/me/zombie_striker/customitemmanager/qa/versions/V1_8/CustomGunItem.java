@@ -1,6 +1,9 @@
 package me.zombie_striker.customitemmanager.qa.versions.V1_8;
 
-import me.zombie_striker.customitemmanager.*;
+import me.zombie_striker.customitemmanager.CustomBaseObject;
+import me.zombie_striker.customitemmanager.CustomItemManager;
+import me.zombie_striker.customitemmanager.MaterialStorage;
+import me.zombie_striker.customitemmanager.OLD_ItemFact;
 import me.zombie_striker.customitemmanager.pack.StaticPackProvider;
 import me.zombie_striker.customitemmanager.qa.AbstractCustomGunItem;
 import me.zombie_striker.qg.QAMain;
@@ -10,12 +13,12 @@ import me.zombie_striker.qg.attachments.AttachmentBase;
 import me.zombie_striker.qg.config.ArmoryYML;
 import me.zombie_striker.qg.config.GunYMLCreator;
 import me.zombie_striker.qg.guns.Gun;
+import me.zombie_striker.qg.guns.chargers.ChargingManager;
 import me.zombie_striker.qg.guns.projectiles.ProjectileManager;
+import me.zombie_striker.qg.guns.reloaders.ReloadingManager;
 import me.zombie_striker.qg.guns.utils.WeaponSounds;
 import me.zombie_striker.qg.guns.utils.WeaponType;
 import me.zombie_striker.qg.handlers.MultiVersionLookup;
-import me.zombie_striker.qg.guns.chargers.ChargingManager;
-import me.zombie_striker.qg.guns.reloaders.ReloadingManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;

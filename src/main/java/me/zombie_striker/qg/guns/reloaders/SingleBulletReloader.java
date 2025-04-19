@@ -1,18 +1,16 @@
 package me.zombie_striker.qg.guns.reloaders;
 
+import me.zombie_striker.qg.QAMain;
+import me.zombie_striker.qg.api.QualityArmory;
+import me.zombie_striker.qg.guns.Gun;
+import me.zombie_striker.qg.guns.utils.WeaponSounds;
+import org.bukkit.Sound;
+import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
-import me.zombie_striker.qg.api.QualityArmory;
-import org.bukkit.Sound;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitRunnable;
-
-import me.zombie_striker.qg.QAMain;
-import me.zombie_striker.qg.guns.Gun;
-import me.zombie_striker.qg.guns.utils.WeaponSounds;
 
 public class SingleBulletReloader implements ReloadingHandler {
 

@@ -1,8 +1,8 @@
 package me.zombie_striker.qg.config;
 
-import java.io.File;
-
 import me.zombie_striker.qg.QAMain;
+
+import java.io.File;
 
 public class ArmorYML extends ArmoryYML {
 

@@ -6,7 +6,6 @@ import me.zombie_striker.qg.hooks.protection.implementation.ResidenceHook;
 import me.zombie_striker.qg.hooks.protection.implementation.TownyHook;
 import me.zombie_striker.qg.hooks.protection.implementation.WorldGuardHook;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 
 import java.lang.reflect.Constructor;

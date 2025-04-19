@@ -1,13 +1,12 @@
 package me.zombie_striker.qg.npcs;
 
-import org.bukkit.event.EventHandler;
-import org.bukkit.plugin.java.JavaPlugin;
-
 import me.zombie_striker.qg.QAMain;
 import net.citizensnpcs.api.persistence.Persist;
 import net.citizensnpcs.api.trait.Trait;
 import net.citizensnpcs.api.trait.TraitName;
 import net.citizensnpcs.api.util.DataKey;
+import org.bukkit.event.EventHandler;
+import org.bukkit.plugin.java.JavaPlugin;
 
 @TraitName("gunnertrait") // convenience annotation in recent CitizensAPI versions for specifying trait
 							// name

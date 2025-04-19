@@ -1,14 +1,18 @@
 package me.zombie_striker.qg.handlers;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
-
+import com.comphenix.protocol.PacketType;
+import com.comphenix.protocol.ProtocolLibrary;
+import com.comphenix.protocol.ProtocolManager;
+import com.comphenix.protocol.events.ListenerPriority;
+import com.comphenix.protocol.events.PacketAdapter;
+import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.events.PacketEvent;
 import com.cryptomorin.xseries.XMaterial;
 import com.cryptomorin.xseries.reflection.XReflection;
 import com.mojang.datafixers.util.Pair;
 import de.tr7zw.changeme.nbtapi.NBT;
+import me.zombie_striker.qg.QAMain;
+import me.zombie_striker.qg.api.QualityArmory;
 import me.zombie_striker.qg.guns.Gun;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -16,11 +20,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
-import com.comphenix.protocol.*;
-import com.comphenix.protocol.events.*;
-
-import me.zombie_striker.qg.QAMain;
-import me.zombie_striker.qg.api.QualityArmory;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProtocolLibHandler {
 

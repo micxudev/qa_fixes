@@ -1,5 +1,12 @@
 package me.zombie_striker.qg.npcs.goals;
 
+import me.zombie_striker.qg.guns.Gun;
+import me.zombie_striker.qg.guns.utils.GunUtil;
+import me.zombie_striker.qg.npcs.Gunner;
+import net.citizensnpcs.api.CitizensAPI;
+import net.citizensnpcs.api.ai.Goal;
+import net.citizensnpcs.api.ai.GoalSelector;
+import net.citizensnpcs.api.npc.NPC;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -9,15 +16,6 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 import org.bukkit.util.Vector;
-
-import me.zombie_striker.qg.guns.Gun;
-import me.zombie_striker.qg.guns.utils.GunUtil;
-import me.zombie_striker.qg.handlers.BoundingBoxUtil;
-import me.zombie_striker.qg.npcs.Gunner;
-import net.citizensnpcs.api.CitizensAPI;
-import net.citizensnpcs.api.ai.Goal;
-import net.citizensnpcs.api.ai.GoalSelector;
-import net.citizensnpcs.api.npc.NPC;
 
 public class Gunnergoal implements Goal {
 

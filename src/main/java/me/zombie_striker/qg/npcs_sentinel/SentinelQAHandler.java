@@ -1,6 +1,9 @@
 package me.zombie_striker.qg.npcs_sentinel;
 
-import org.bukkit.entity.Entity;
+import me.zombie_striker.qg.QAMain;
+import me.zombie_striker.qg.api.QualityArmory;
+import me.zombie_striker.qg.guns.Gun;
+import me.zombie_striker.qg.guns.utils.GunUtil;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -8,11 +11,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 import org.mcmonkey.sentinel.SentinelIntegration;
 import org.mcmonkey.sentinel.SentinelTrait;
-
-import me.zombie_striker.qg.QAMain;
-import me.zombie_striker.qg.api.QualityArmory;
-import me.zombie_striker.qg.guns.Gun;
-import me.zombie_striker.qg.guns.utils.GunUtil;
 
 import java.util.HashMap;
 import java.util.UUID;

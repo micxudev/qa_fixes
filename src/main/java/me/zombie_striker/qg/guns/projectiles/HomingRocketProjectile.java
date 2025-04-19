@@ -1,8 +1,5 @@
 package me.zombie_striker.qg.guns.projectiles;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.cryptomorin.xseries.particles.XParticle;
 import me.zombie_striker.qg.QAMain;
 import me.zombie_striker.qg.api.QAProjectileExplodeEvent;
@@ -13,13 +10,15 @@ import me.zombie_striker.qg.guns.utils.WeaponSounds;
 import me.zombie_striker.qg.handlers.ExplosionHandler;
 import me.zombie_striker.qg.handlers.MultiVersionLookup;
 import me.zombie_striker.qg.handlers.ParticleHandlers;
-
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomingRocketProjectile implements RealtimeCalculationProjectile {
 	public HomingRocketProjectile() {

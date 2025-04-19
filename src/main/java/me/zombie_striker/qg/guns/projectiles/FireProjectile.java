@@ -1,14 +1,10 @@
 package me.zombie_striker.qg.guns.projectiles;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import me.zombie_striker.qg.QAMain;
 import me.zombie_striker.qg.boundingbox.AbstractBoundingBox;
 import me.zombie_striker.qg.boundingbox.BoundingBoxManager;
 import me.zombie_striker.qg.guns.Gun;
 import me.zombie_striker.qg.guns.utils.GunUtil;
-
 import me.zombie_striker.qg.hooks.protection.ProtectionHandler;
 import org.bukkit.Location;
 import org.bukkit.Particle;
@@ -17,6 +13,9 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class FireProjectile implements RealtimeCalculationProjectile {
 	public FireProjectile() {

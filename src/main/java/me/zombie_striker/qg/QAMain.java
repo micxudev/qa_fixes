@@ -2,8 +2,6 @@ package me.zombie_striker.qg;
 
 import com.cryptomorin.xseries.XPotion;
 import com.cryptomorin.xseries.reflection.XReflection;
-
-
 import de.tr7zw.changeme.nbtapi.NBT;
 import de.tr7zw.changeme.nbtapi.utils.MinecraftVersion;
 import me.zombie_striker.customitemmanager.CustomBaseObject;

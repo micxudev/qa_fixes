@@ -1,9 +1,8 @@
 package me.zombie_striker.qg.handlers;
 
-import java.util.HashMap;
-import java.util.UUID;
-
 import me.zombie_striker.customitemmanager.CustomItemManager;
+import me.zombie_striker.qg.QAMain;
+import me.zombie_striker.qg.api.QualityArmory;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -11,8 +10,8 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-import me.zombie_striker.qg.QAMain;
-import me.zombie_striker.qg.api.QualityArmory;
+import java.util.HashMap;
+import java.util.UUID;
 
 
 public class TreeFellerHandler implements Listener {

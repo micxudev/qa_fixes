@@ -1,12 +1,9 @@
 package me.zombie_striker.qg.boundingbox;
 
-import me.zombie_striker.qg.QAMain;
-import org.bukkit.ChatColor;
+import me.zombie_striker.qg.handlers.BoundingBoxUtil;
 import org.bukkit.Location;
 import org.bukkit.entity.Ageable;
 import org.bukkit.entity.Entity;
-
-import me.zombie_striker.qg.handlers.BoundingBoxUtil;
 
 public class DefaultHumanoidBoundingBox implements AbstractBoundingBox{
 
