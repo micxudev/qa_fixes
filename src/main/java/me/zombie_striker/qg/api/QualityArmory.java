@@ -6,6 +6,7 @@ import me.zombie_striker.customitemmanager.MaterialStorage;
 import me.zombie_striker.customitemmanager.OLD_ItemFact;
 import me.zombie_striker.qg.QAMain;
 import me.zombie_striker.qg.ammo.Ammo;
+import me.zombie_striker.qg.ammo.AmmoBox;
 import me.zombie_striker.qg.armor.ArmorObject;
 import me.zombie_striker.qg.attachments.AttachmentBase;
 import me.zombie_striker.qg.config.GunYML;
@@ -731,13 +732,19 @@ public class QualityArmory {
 					if (ammoType != null && ammoType.equals(a)) {
 						int amountInBag = ab.getAmmo(is);
 
+						int newAmount = 0;
+
 						if (amountInBag >= remaining) {
-							ab.updateAmmoLore(is, amountInBag - remaining);
+							ab.updateAmmoLore(is, newAmount = (amountInBag - remaining));
 							remaining = 0;
 						} else {
 							ab.updateAmmoLore(is, 0);
 							remaining -= amountInBag;
 						}
+
+						if (newAmount == 0 && ab instanceof AmmoBox)
+							player.getInventory().setItem(i, new ItemStack(Material.AIR));
+
 					}
 
 				}
