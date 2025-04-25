@@ -35,7 +35,6 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.Scoreboard;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -210,7 +209,7 @@ public class QAListener implements Listener {
 			return;
 		int k = 0;
 		if (e.getPlayer().getItemInHand() != null)
-			if ((k = Gun.getCalculatedExtraDurib(e.getPlayer().getItemInHand())) != -1) {
+			if ((k = Gun.getCalculatedExtraDurability(e.getPlayer().getItemInHand())) != -1) {
 				ItemStack hand = e.getPlayer().getItemInHand();
 				e.getBlock().breakNaturally(hand);
 				e.setCancelled(true);
@@ -699,7 +698,7 @@ public class QAListener implements Listener {
 					QAMain.DEBUG("Safe Durib= " + (safeDurib) + "! ORG " + e.getPlayer().getItemInHand().getDurability());
 					ItemStack is = e.getPlayer().getItemInHand();
 					is.setDurability((short) (safeDurib));
-					is = Gun.addCalulatedExtraDurib(is, safeDurib - e.getPlayer().getItemInHand().getDurability());
+					is = Gun.addCalculatedExtraDurability(is, safeDurib - e.getPlayer().getItemInHand().getDurability());
 					e.getPlayer().setItemInHand(is);
 					// }
 				}
@@ -719,7 +718,7 @@ public class QAListener implements Listener {
 								+ e.getPlayer().getInventory().getItemInOffHand().getDurability());
 						ItemStack is = e.getPlayer().getInventory().getItemInOffHand();
 						is.setDurability((short) (safeDurib));
-						is = Gun.addCalulatedExtraDurib(is,
+						is = Gun.addCalculatedExtraDurability(is,
 								safeDurib - e.getPlayer().getInventory().getItemInOffHand().getDurability());
 						e.getPlayer().getInventory().setItemInOffHand(is);
 						// }
