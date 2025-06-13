@@ -3,7 +3,6 @@ package me.zombie_striker.qg.ammo;
 import me.zombie_striker.customitemmanager.MaterialStorage;
 import me.zombie_striker.qg.api.QualityArmory;
 import me.zombie_striker.qg.miscitems.AmmoBag;
-import me.zombie_striker.qg.utils.LocalUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -39,7 +38,7 @@ public class AmmoBox extends AmmoBag {
         if (meta == null) return;
 
         meta.setDisplayName(ammoType.getDisplayName() +
-                ChatColor.GREEN + " " + newAmmo + ChatColor.GRAY + " | " + ChatColor.RED + maxAmmoCount
+            ChatColor.GREEN + " " + newAmmo + ChatColor.GRAY + " | " + ChatColor.RED + maxAmmoCount
         );
 
         item.setItemMeta(meta);

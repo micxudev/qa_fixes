@@ -2,8 +2,6 @@ package me.zombie_striker.qg;
 
 import com.cryptomorin.xseries.XPotion;
 import com.cryptomorin.xseries.reflection.XReflection;
-
-
 import de.tr7zw.changeme.nbtapi.NBT;
 import de.tr7zw.changeme.nbtapi.utils.MinecraftVersion;
 import me.zombie_striker.customitemmanager.CustomBaseObject;
@@ -299,8 +297,8 @@ public class QAMain extends JavaPlugin {
                 boolean potionEff = false;
                 try {
                     potionEff = player.hasPotionEffect(PotionEffectType.NIGHT_VISION)
-                            && (g == null || g.hasNightVision())
-                            && player.getPotionEffect(PotionEffectType.NIGHT_VISION).getAmplifier() == 3;
+                        && (g == null || g.hasNightVision())
+                        && player.getPotionEffect(PotionEffectType.NIGHT_VISION).getAmplifier() == 3;
                 } catch (Error | Exception e3452) {
                     for (PotionEffect pe : player.getActivePotionEffects())
                         if (pe.getType() == PotionEffectType.NIGHT_VISION)
@@ -342,15 +340,15 @@ public class QAMain extends JavaPlugin {
                 ((Player) e.getWhoClicked()).playSound(e.getWhoClicked().getLocation(), Sound.BLOCK_ANVIL_USE, 0.7f, 1);
             } catch (Error e2) {
                 ((Player) e.getWhoClicked()).playSound(e.getWhoClicked().getLocation(), Sound.valueOf("ANVIL_USE"),
-                        0.7f, 1);
+                    0.7f, 1);
             }
         } else {
             try {
                 ((Player) e.getWhoClicked()).playSound(e.getWhoClicked().getLocation(), MultiVersionLookup.getHarp(),
-                        0.7f, 1);
+                    0.7f, 1);
             } catch (Error e2) {
                 ((Player) e.getWhoClicked()).playSound(e.getWhoClicked().getLocation(), Sound.valueOf("NOTE_PIANO"),
-                        0.7f, 1);
+                    0.7f, 1);
             }
         }
     }
@@ -372,7 +370,7 @@ public class QAMain extends JavaPlugin {
                     if (ings[i] instanceof ItemStack) {
                         ItemStack check = (ItemStack) ings[i];
                         if (is.getType() == check.getType()
-                                && (check.getDurability() == 0 || is.getDurability() == check.getDurability())) {
+                            && (check.getDurability() == 0 || is.getDurability() == check.getDurability())) {
                             if (is.getAmount() >= check.getAmount())
                                 bb[i] = true;
                             break;
@@ -503,17 +501,17 @@ public class QAMain extends JavaPlugin {
     public static Inventory createCustomInventory(int page, boolean shopping) {
         Inventory shopMenu = new QAInventoryHolder((shopping ? S_shopName : S_craftingBenchName) + page).getInventory();
         List<Gun> gunslistr = gunRegister.values().stream()
-                .filter(CustomBaseObject::isEnableCrafting)
-                .collect(Collectors.toList());
+            .filter(CustomBaseObject::isEnableCrafting)
+            .collect(Collectors.toList());
         List<Ammo> ammolistr = ammoRegister.values().stream()
-                .filter(CustomBaseObject::isEnableCrafting)
-                .collect(Collectors.toList());
+            .filter(CustomBaseObject::isEnableCrafting)
+            .collect(Collectors.toList());
         List<CustomBaseObject> misclistr = miscRegister.values().stream()
-                .filter(CustomBaseObject::isEnableCrafting)
-                .collect(Collectors.toList());
+            .filter(CustomBaseObject::isEnableCrafting)
+            .collect(Collectors.toList());
         List<ArmorObject> armorlistr = armorRegister.values().stream()
-                .filter(CustomBaseObject::isEnableCrafting)
-                .collect(Collectors.toList());
+            .filter(CustomBaseObject::isEnableCrafting)
+            .collect(Collectors.toList());
 
         List<CustomBaseObject> allItems = new ArrayList<>();
         allItems.addAll(gunslistr);
@@ -522,9 +520,9 @@ public class QAMain extends JavaPlugin {
         allItems.addAll(armorlistr);
 
         List<CustomBaseObject> filteredItems = allItems.stream()
-                .filter(item -> (shopping && item.getPrice() >= 0 && item.isEnableShop()) || 
-                               (!shopping && item.getIngredientsRaw() != null))
-                .collect(Collectors.toList());
+            .filter(item -> (shopping && item.getPrice() >= 0 && item.isEnableShop()) ||
+                (!shopping && item.getIngredientsRaw() != null))
+            .collect(Collectors.toList());
 
         int itemsPerPage = 9 * 5;
         int startIndex = page * itemsPerPage;
@@ -676,7 +674,7 @@ public class QAMain extends JavaPlugin {
             try {
                 // Register your trait with Citizens.
                 net.citizensnpcs.api.CitizensAPI.getTraitFactory()
-                        .registerTrait(net.citizensnpcs.api.trait.TraitInfo.create(GunnerTrait.class));
+                    .registerTrait(net.citizensnpcs.api.trait.TraitInfo.create(GunnerTrait.class));
             } catch (Error | Exception e4) {
                 getLogger().log(Level.WARNING, "Citizens 2.0 failed to register gunner trait (Ignore this.)");
             }
@@ -710,9 +708,9 @@ public class QAMain extends JavaPlugin {
 
         metrics.addCustomChart(new Metrics.SimplePie("GunCount", () -> gunRegister.size() + ""));
         metrics.addCustomChart(
-                new Metrics.SimplePie("uses_default_resourcepack", () -> overrideURL + ""));
+            new Metrics.SimplePie("uses_default_resourcepack", () -> overrideURL + ""));
         metrics.addCustomChart(
-                new Metrics.SimplePie("has_an_expansion_pack", () -> (expansionPacks.size() > 0) + ""));
+            new Metrics.SimplePie("has_an_expansion_pack", () -> (expansionPacks.size() > 0) + ""));
         if (!CustomItemManager.isUsingCustomData()) {
             new BukkitRunnable() {
                 @SuppressWarnings("deprecation")
@@ -724,7 +722,7 @@ public class QAMain extends JavaPlugin {
                             if (p.getItemInHand() != null && p.getItemInHand().hasItemMeta())
                                 if (QualityArmory.isCustomItem(p.getItemInHand())) {
                                     if (ITEM_enableUnbreakable && (!p.getItemInHand().getItemMeta().isUnbreakable()
-                                            && !ignoreUnbreaking)) {
+                                        && !ignoreUnbreaking)) {
                                         ItemStack temp = p.getItemInHand();
                                         int j = QualityArmory.findSafeSpot(temp, false, overrideURL);
                                         temp.setDurability((short) Math.max(0, j - 1));
@@ -738,10 +736,10 @@ public class QAMain extends JavaPlugin {
                                 // (p.getInventory().getItemInOffHand().containsEnchantment(Enchantment.MENDING))
                                 // {
                                 if (p.getInventory().getItemInOffHand() != null
-                                        && p.getInventory().getItemInOffHand().hasItemMeta())
+                                    && p.getInventory().getItemInOffHand().hasItemMeta())
                                     if (QualityArmory.isCustomItem(p.getInventory().getItemInOffHand())) {
                                         if (ITEM_enableUnbreakable && (!p.getInventory().getItemInOffHand().getItemMeta()
-                                                .isUnbreakable() && !ignoreUnbreaking)) {
+                                            .isUnbreakable() && !ignoreUnbreaking)) {
                                             ItemStack temp = p.getInventory().getItemInOffHand();
                                             int j = QualityArmory.findSafeSpot(temp, false, overrideURL);
                                             temp.setDurability((short) Math.max(0, j - 1));
@@ -819,9 +817,9 @@ public class QAMain extends JavaPlugin {
         S_ITEM_ING = LocalUtils.colorize((String) m.a("Lore_ingredients", S_ITEM_ING));
         if (m.getConfig().contains("Lore_Varients"))
             S_ITEM_VARIANTS_LEGACY = LocalUtils.colorize(
-                    (String) m.a("Lore_Varients", S_ITEM_VARIANTS_LEGACY));
+                (String) m.a("Lore_Varients", S_ITEM_VARIANTS_LEGACY));
         S_ITEM_VARIANTS_NEW = LocalUtils.colorize(
-                (String) m.a("Lore_Variants", S_ITEM_VARIANTS_NEW));
+            (String) m.a("Lore_Variants", S_ITEM_VARIANTS_NEW));
         S_ITEM_COST = LocalUtils.colorize((String) m.a("Lore_Price", S_ITEM_COST));
         S_ITEM_DPS = LocalUtils.colorize((String) m.a("Lore_DamagePerSecond", S_ITEM_DPS));
 
@@ -831,13 +829,13 @@ public class QAMain extends JavaPlugin {
 
 
         S_RELOADING_MESSAGE = LocalUtils.colorize(
-                (String) m.a("Reloading_Message", S_RELOADING_MESSAGE));
+            (String) m.a("Reloading_Message", S_RELOADING_MESSAGE));
         S_MAX_FOUND = LocalUtils.colorize((String) m.a("State_AmmoCount", S_MAX_FOUND));
         S_OUT_OF_AMMO = LocalUtils.colorize((String) m.a("State_OutOfAmmo", S_OUT_OF_AMMO));
         S_HOTBAR_FORMAT = LocalUtils.colorize((String) m.a("HotbarMessage", S_HOTBAR_FORMAT));
 
         S_KICKED_FOR_RESOURCEPACK = LocalUtils.colorize(
-                (String) m.a("Kick_message_if_player_denied_request", S_KICKED_FOR_RESOURCEPACK));
+            (String) m.a("Kick_message_if_player_denied_request", S_KICKED_FOR_RESOURCEPACK));
 
         S_LMB_SINGLE = (String) m.a("Lore-LMB-Single", S_LMB_SINGLE);
         S_LMB_FULLAUTO = (String) m.a("Lore-LMB-FullAuto", S_LMB_FULLAUTO);
@@ -860,23 +858,23 @@ public class QAMain extends JavaPlugin {
 
         S_FULLYHEALED = LocalUtils.colorize((String) m.a("Medkit-FullyHealed", S_FULLYHEALED));
         S_MEDKIT_HEALING = LocalUtils.colorize(
-                (String) m.a("Medkit-Healing", S_MEDKIT_HEALING));
+            (String) m.a("Medkit-Healing", S_MEDKIT_HEALING));
         S_MEDKIT_BLEEDING = LocalUtils.colorize(
-                (String) m.a("Medkit-Bleeding", S_MEDKIT_BLEEDING));
+            (String) m.a("Medkit-Bleeding", S_MEDKIT_BLEEDING));
 
         S_MEDKIT_HEAL_AMOUNT = (double) m.a("Medkit-HEALING_HEARTS_AMOUNT", S_MEDKIT_HEAL_AMOUNT);
 
         S_MEDKIT_HEALDELAY = (double) m.a("Medkit-HEALING_WEAPPING_DELAY_IN_SECONDS", S_MEDKIT_HEALDELAY);
 
         S_MEDKIT_LORE_INFO = LocalUtils.colorize(
-                (String) m.a("Medkit-Lore_RMB", S_MEDKIT_LORE_INFO));
+            (String) m.a("Medkit-Lore_RMB", S_MEDKIT_LORE_INFO));
 
         S_BLEEDOUT_LOSINGconscious = LocalUtils.colorize(
-                (String) m.a("Bleeding.Losingconsciousness", S_BLEEDOUT_LOSINGconscious));
+            (String) m.a("Bleeding.Losingconsciousness", S_BLEEDOUT_LOSINGconscious));
         S_BLEEDOUT_STARTBLEEDING = LocalUtils.colorize(
-                (String) m.a("Bleeding.StartBleeding", S_BLEEDOUT_STARTBLEEDING));
+            (String) m.a("Bleeding.StartBleeding", S_BLEEDOUT_STARTBLEEDING));
         S_BULLETPROOFSTOPPEDBLEEDING = LocalUtils.colorize(
-                (String) m.a("Bleeding.ProtectedByKevlar", S_BULLETPROOFSTOPPEDBLEEDING));
+            (String) m.a("Bleeding.ProtectedByKevlar", S_BULLETPROOFSTOPPEDBLEEDING));
         S_prevPage = LocalUtils.colorize((String) m.a("gui.prevPage", S_prevPage));
         S_nextPage = LocalUtils.colorize((String) m.a("gui.nextPage", S_nextPage));
         bagAmmo = LocalUtils.colorize((String) m.a("AmmoBag.current", bagAmmo));
@@ -1034,7 +1032,7 @@ public class QAMain extends JavaPlugin {
         allowGunReload = (boolean) a("allowGunReload", allowGunReload);
         AutoDetectResourcepackVersion = (boolean) a("Auto-Detect-Resourcepack", AutoDetectResourcepackVersion);
         MANUALLYSELECT18 = (boolean) a("ManuallyOverrideTo_1_8_systems",
-                Bukkit.getPluginManager().isPluginEnabled("WetSponge") ? true : MANUALLYSELECT18);
+            Bukkit.getPluginManager().isPluginEnabled("WetSponge") ? true : MANUALLYSELECT18);
         MANUALLYSELECT113 = (boolean) a("ManuallyOverrideTo_1_13_systems", MANUALLYSELECT113);
         MANUALLYSELECT14 = (boolean) a("ManuallyOverrideTo_1_14_systems", MANUALLYSELECT14);
 
@@ -1049,11 +1047,11 @@ public class QAMain extends JavaPlugin {
         enableRecoil = (boolean) a("enableRecoil", true);
 
         bulletWound_initialbloodamount = (double) a("experimental.BulletWounds.InitialBloodLevel",
-                bulletWound_initialbloodamount);
+            bulletWound_initialbloodamount);
         bulletWound_BloodIncreasePerSecond = (double) a("experimental.BulletWounds.BloodIncreasePerSecond",
-                bulletWound_BloodIncreasePerSecond);
+            bulletWound_BloodIncreasePerSecond);
         bulletWound_MedkitBloodlossHealRate = (double) a("experimental.BulletWounds.Medkit_Heal_Bloodloss_Rate",
-                bulletWound_MedkitBloodlossHealRate);
+            bulletWound_MedkitBloodlossHealRate);
         enableBleeding = (boolean) a("experimental.BulletWounds.enableBleeding", enableBleeding);
 
         disableHotBarMessageOnOutOfAmmo = (boolean) a("disableHotbarMessages.OutOfAmmo", false);
@@ -1071,7 +1069,7 @@ public class QAMain extends JavaPlugin {
 
 
         List<String> avoidTypes = (List<String>) a("impenetrableEntityTypes",
-                Collections.singletonList(EntityType.ARROW.name()));
+            Collections.singletonList(EntityType.ARROW.name()));
         if (getConfig().getBoolean("ignoreArmorStands"))
             QAMain.avoidTypes.add(EntityType.ARMOR_STAND);
         for (String s : avoidTypes) {
@@ -1097,14 +1095,14 @@ public class QAMain extends JavaPlugin {
         SwapSneakToSingleFire = (boolean) a("SwapSneakToSingleFire", SwapSneakToSingleFire);
 
         List<String> destarray = (List<String>) a("DestructableMaterials",
-                Collections.singletonList("MATERIAL_NAME_HERE"));
+            Collections.singletonList("MATERIAL_NAME_HERE"));
         destructableBlocks.addAll(GunYMLLoader.getMaterials(destarray));
         regenDestructableBlocksAfter = (int) a("RegenDestructableBlocksAfter", regenDestructableBlocksAfter);
 
         for (Material m : Material.values())
             if (m.isBlock())
                 if (m.name().contains("DOOR") || m.name().contains("TRAPDOOR") || m.name().contains("BUTTON")
-                        || m.name().contains("LEVER"))
+                    || m.name().contains("LEVER"))
                     interactableBlocks.add(m);
 // Chris: default has 1.14 ItemType
         if ((MANUALLYSELECT18 || !isVersionHigherThan(1, 9)) && !MANUALLYSELECT113 && !MANUALLYSELECT14) {
@@ -1170,7 +1168,7 @@ public class QAMain extends JavaPlugin {
             }
         } else {
             if (!getConfig().contains("DefaultResourcepack")
-                    || !getConfig().getString("DefaultResourcepack").equals(CustomItemManager.getResourcepack(null))) {
+                || !getConfig().getString("DefaultResourcepack").equals(CustomItemManager.getResourcepack(null))) {
                 getConfig().set("DefaultResourcepack", CustomItemManager.getResourcepackProvider().serialize());
                 saveTheConfig = true;
             }
@@ -1327,7 +1325,7 @@ public class QAMain extends JavaPlugin {
             if (args.length > 0) {
                 if (args[0].equalsIgnoreCase("version")) {
                     sender.sendMessage(prefix + ChatColor.WHITE + " This server is using version " + ChatColor.GREEN
-                            + this.getDescription().getVersion() + ChatColor.WHITE + " of QualityArmory");
+                        + this.getDescription().getVersion() + ChatColor.WHITE + " of QualityArmory");
                     sender.sendMessage("--==Changelog==--");
                     if (changelog == null) {
                         StringBuilder builder = new StringBuilder();
@@ -1401,15 +1399,15 @@ public class QAMain extends JavaPlugin {
                                 return true;
                             }
                             GunYMLCreator.createSkullAmmo(true, getDataFolder(), false, "custom_" + args[1], args[1],
-                                    args[1], Collections.singletonList("Custom_item"), itemInHand.getType(),
-                                    itemInHand.getDurability(),
-                                    (itemInHand.getType() == MultiVersionLookup.getSkull()
-                                            ? ((SkullMeta) itemInHand.getItemMeta()).getOwner()
-                                            : null),
-                                    null, 100, 1, 64);
+                                args[1], Collections.singletonList("Custom_item"), itemInHand.getType(),
+                                itemInHand.getDurability(),
+                                (itemInHand.getType() == MultiVersionLookup.getSkull()
+                                    ? ((SkullMeta) itemInHand.getItemMeta()).getOwner()
+                                    : null),
+                                null, 100, 1, 64);
                             sender.sendMessage(prefix + " A new ammo type has been created.");
                             sender.sendMessage(
-                                    prefix + " You will need to use /qa reload for the new ammo type to appear.");
+                                prefix + " You will need to use /qa reload for the new ammo type to appear.");
                         } else {
                             sendHelp(sender);
                         }
@@ -1464,13 +1462,13 @@ public class QAMain extends JavaPlugin {
                     if (sender.hasPermission("qualityarmory.getmaterialsused")) {
                         for (CustomBaseObject g : miscRegister.values())
                             sender.sendMessage(ChatColor.GREEN + g.getName() + ": " + ChatColor.WHITE
-                                    + g.getItemData().getMat().name() + " : " + g.getItemData().getData());
+                                + g.getItemData().getMat().name() + " : " + g.getItemData().getData());
                         for (Gun g : gunRegister.values())
                             sender.sendMessage(ChatColor.GOLD + g.getName() + ": " + ChatColor.WHITE
-                                    + g.getItemData().getMat().name() + " : " + g.getItemData().getData());
+                                + g.getItemData().getMat().name() + " : " + g.getItemData().getData());
                         for (Ammo g : ammoRegister.values())
                             sender.sendMessage(ChatColor.AQUA + g.getName() + ": " + ChatColor.WHITE
-                                    + g.getItemData().getMat().name() + " : " + g.getItemData().getData());
+                                + g.getItemData().getMat().name() + " : " + g.getItemData().getData());
                     } else {
                         sender.sendMessage(prefix + ChatColor.RED + S_NOPERM);
                         return true;
@@ -1743,14 +1741,14 @@ public class QAMain extends JavaPlugin {
     public void sendHelp(CommandSender sender) {
         sender.sendMessage(LocalUtils.colorize(prefix + " Commands:"));
         sender.sendMessage(ChatColor.GOLD + "/QA give <Item> [player] [amount]:" + ChatColor.GRAY
-                + " Gives the sender the item specified (guns, ammo, misc.)");
+            + " Gives the sender the item specified (guns, ammo, misc.)");
         sender.sendMessage(ChatColor.GOLD + "/QA craft [Item]:" + ChatColor.GRAY + " Opens the crafting menu.");
         sender.sendMessage(ChatColor.GOLD + "/QA shop: " + ChatColor.GRAY + "Opens the shop menu");
 
         sender.sendMessage(ChatColor.GOLD + "/QA getResourcepack: " + ChatColor.GRAY
-                + "Sends the link to the resourcepack. Disables the resourcepack prompts until /qa sendResourcepack is used");
+            + "Sends the link to the resourcepack. Disables the resourcepack prompts until /qa sendResourcepack is used");
         sender.sendMessage(ChatColor.GOLD + "/QA sendResourcepack: " + ChatColor.GRAY
-                + "Sends the resourcepack prompt. Enables the resourcepack prompt. Enabled by default");
+            + "Sends the resourcepack prompt. Enables the resourcepack prompt. Enabled by default");
 
         // sender.sendMessage(
         // ChatColor.GOLD + "/QA listItemIds: " + ChatColor.GRAY + "Lists the materials
@@ -1759,7 +1757,7 @@ public class QAMain extends JavaPlugin {
             sender.sendMessage(ChatColor.GOLD + "/QA reload: " + ChatColor.GRAY + "reloads all values in QA.");
         if (sender.hasPermission("qualityarmory.createnewitem")) {
             sender.sendMessage(ChatColor.GOLD + "/QA createNewAmmo <name>: " + ChatColor.GRAY
-                    + "Creats a new ammo type using the item in your hand as a template");
+                + "Creats a new ammo type using the item in your hand as a template");
         }
     }
 

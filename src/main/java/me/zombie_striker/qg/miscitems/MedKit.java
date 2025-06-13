@@ -1,23 +1,22 @@
 package me.zombie_striker.qg.miscitems;
 
-import java.text.DecimalFormat;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
+import com.cryptomorin.xseries.XPotion;
 import me.zombie_striker.customitemmanager.CustomBaseObject;
 import me.zombie_striker.customitemmanager.CustomItemManager;
+import me.zombie_striker.customitemmanager.MaterialStorage;
+import me.zombie_striker.qg.QAMain;
 import me.zombie_striker.qg.api.QualityArmory;
+import me.zombie_striker.qg.handlers.BulletWoundHandler;
 import me.zombie_striker.qg.handlers.HotbarMessager;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffectType;
 
-import me.zombie_striker.qg.QAMain;
-import me.zombie_striker.customitemmanager.MaterialStorage;
-import me.zombie_striker.qg.handlers.BulletWoundHandler;
-import com.cryptomorin.xseries.XPotion;
+import java.text.DecimalFormat;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class MedKit extends CustomBaseObject {
 
@@ -54,7 +53,7 @@ public class MedKit extends CustomBaseObject {
             if (healer.getHealth() < healer.getMaxHealth()) {
 
                 if (!lastTimeHealed.containsKey(healer.getUniqueId())
-                        || System.currentTimeMillis() - lastTimeHealed.get(healer.getUniqueId()) > 1500) {
+                    || System.currentTimeMillis() - lastTimeHealed.get(healer.getUniqueId()) > 1500) {
                     PercentTimeHealed.put(healer.getUniqueId(), 0.0);
                 }
                 lastTimeHealed.put(healer.getUniqueId(), System.currentTimeMillis());
@@ -83,7 +82,7 @@ public class MedKit extends CustomBaseObject {
                 levelBar.append(QualityArmory.repeat(":", totalBars - healthBars));
                 try {
                     HotbarMessager.sendHotBarMessage(healer, ChatColor.RED + "[" + levelBar.toString() + ChatColor.RED
-                            + "] " + new DecimalFormat("##0.#").format((p2 + percent)) + " percent!");
+                        + "] " + new DecimalFormat("##0.#").format((p2 + percent)) + " percent!");
                 } catch (Exception e2) {
                 }
 
@@ -99,16 +98,16 @@ public class MedKit extends CustomBaseObject {
         double percentBlood = Math.max(0, bloodLevel / QAMain.bulletWound_initialbloodamount);
 
         ChatColor severity = percentBlood > 75 ? ChatColor.WHITE
-                : percentBlood > 50 ? ChatColor.GRAY : percentBlood > 25 ? ChatColor.RED : ChatColor.DARK_RED;
+            : percentBlood > 50 ? ChatColor.GRAY : percentBlood > 25 ? ChatColor.RED : ChatColor.DARK_RED;
         if (BulletWoundHandler.bleedoutMultiplier.containsKey(healer.getUniqueId())
-                && BulletWoundHandler.bleedoutMultiplier.get(healer.getUniqueId()) < 0)
+            && BulletWoundHandler.bleedoutMultiplier.get(healer.getUniqueId()) < 0)
             BulletWoundHandler.bleedoutMultiplier.put(healer.getUniqueId(),
-                    Math.min(0, BulletWoundHandler.bleedoutMultiplier.get(healer.getUniqueId())
-                            + QAMain.bulletWound_MedkitBloodlossHealRate));
+                Math.min(0, BulletWoundHandler.bleedoutMultiplier.get(healer.getUniqueId())
+                    + QAMain.bulletWound_MedkitBloodlossHealRate));
 
         double newRate = BulletWoundHandler.bleedoutMultiplier.containsKey(healer.getUniqueId())
-                ? BulletWoundHandler.bleedoutMultiplier.get(healer.getUniqueId())
-                : 0;
+            ? BulletWoundHandler.bleedoutMultiplier.get(healer.getUniqueId())
+            : 0;
 
         if (newRate >= 0) {
             BulletWoundHandler.bleedoutMultiplier.remove(healer.getUniqueId());
@@ -134,10 +133,10 @@ public class MedKit extends CustomBaseObject {
             levelBar.append(QualityArmory.repeat(":", totalBars - healthBars));
 
             HotbarMessager.sendHotBarMessage(healer,
-                    ChatColor.RED + QAMain.S_MEDKIT_HEALING + "[" + levelBar.toString() + ChatColor.RED + "] "
-                            + QAMain.S_MEDKIT_BLEEDING + " " + (newRate < 0 ? ChatColor.DARK_RED : ChatColor.GRAY)
-                            + new DecimalFormat("##0.##").format(newRate) + ChatColor.GRAY + "+"
-                            + QAMain.bulletWound_BloodIncreasePerSecond);
+                ChatColor.RED + QAMain.S_MEDKIT_HEALING + "[" + levelBar.toString() + ChatColor.RED + "] "
+                    + QAMain.S_MEDKIT_BLEEDING + " " + (newRate < 0 ? ChatColor.DARK_RED : ChatColor.GRAY)
+                    + new DecimalFormat("##0.##").format(newRate) + ChatColor.GRAY + "+"
+                    + QAMain.bulletWound_BloodIncreasePerSecond);
         } catch (Error | Exception e5) {
         }
         return true;
@@ -156,7 +155,7 @@ public class MedKit extends CustomBaseObject {
     @Override
     public ItemStack getItemStack() {
         return CustomItemManager.getItemType("gun").getItem(this.getItemData().getMat(), this.getItemData().getData(),
-                this.getItemData().getVariant());
+            this.getItemData().getVariant());
     }
 
     @Override

@@ -1,8 +1,9 @@
 package me.zombie_striker.qg.miscitems;
 
-import java.util.List;
-
 import com.cryptomorin.xseries.particles.XParticle;
+import me.zombie_striker.customitemmanager.MaterialStorage;
+import me.zombie_striker.qg.QAMain;
+import me.zombie_striker.qg.guns.utils.WeaponSounds;
 import me.zombie_striker.qg.hooks.protection.ProtectionHandler;
 import org.bukkit.Effect;
 import org.bukkit.Sound;
@@ -13,9 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import me.zombie_striker.qg.QAMain;
-import me.zombie_striker.customitemmanager.MaterialStorage;
-import me.zombie_striker.qg.guns.utils.WeaponSounds;
+import java.util.List;
 
 public class IncendiaryGrenade extends Grenade {
 
@@ -43,14 +42,14 @@ public class IncendiaryGrenade extends Grenade {
             public void run() {
                 try {
                     h.getHolder().getWorld().spawnParticle(XParticle.EXPLOSION_EMITTER.get(),
-                            h.getHolder().getLocation(), 0);
+                        h.getHolder().getLocation(), 0);
                     for (int i = 0; i < 4; i++) {
                         //TODO: Check: This goes in three directions, and one stays still
                         h.getHolder().getWorld().spawnParticle(org.bukkit.Particle.LAVA,
-                                h.getHolder().getLocation(), i);
+                            h.getHolder().getLocation(), i);
                     }
                     h.getHolder().getWorld().playSound(h.getHolder().getLocation(), WeaponSounds.HISS.getSoundName(), 2f,
-                            1f);
+                        1f);
                 } catch (Error e3) {
                     h.getHolder().getWorld().playEffect(h.getHolder().getLocation(), Effect.valueOf("CLOUD"), 0);
                     h.getHolder().getWorld().playSound(h.getHolder().getLocation(), Sound.valueOf("EXPLODE"), 3, 0.7f);

@@ -5,7 +5,7 @@ name: QualityArmory
 commands:
   QualityArmory:
     description: Main command for QA
-    aliases: [qa]
+    aliases: [ qa ]
 permissions:
   qualityarmory.*:
     description: Gives access to all QualityArmory commands
@@ -29,7 +29,7 @@ permissions:
       qualityarmory.craft: true
       qualityarmory.shop: true
       qualityarmory.usegun: true
-softdepend: [Vault, PlaceholderAPI, ChestShop, Parties, WorldGuard, ViaVersion, ViaRewind, LightAPI, Citizens, ProtocolLib, SunLight-Core, ItemBridge, Sentinel, Spartan, Towny, Residence, Matrix, QuickShop, Vulcan, CoreProtect, Mimic, GriefPrevention, Kingdoms]
+softdepend: [ Vault, PlaceholderAPI, ChestShop, Parties, WorldGuard, ViaVersion, ViaRewind, LightAPI, Citizens, ProtocolLib, SunLight-Core, ItemBridge, Sentinel, Spartan, Towny, Residence, Matrix, QuickShop, Vulcan, CoreProtect, Mimic, GriefPrevention, Kingdoms ]
 authors:
   - Zombie_Striker
   - Lorenzo0111

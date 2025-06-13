@@ -12,6 +12,6 @@ public class MatrixHook extends AntiCheatHook {
 
     @EventHandler
     public void onFlag(PlayerViolationEvent event) {
-        this.onViolation(event.getPlayer(),event);
+        this.onViolation(event.getPlayer(), event);
     }
 }

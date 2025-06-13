@@ -13,7 +13,7 @@ public class VulcanHook extends AntiCheatHook {
     @EventHandler
     public void onFlag(VulcanFlagEvent event) {
         if (event.getCheck().getCategory().equalsIgnoreCase("movement") || event.getCheck().getCategory().equalsIgnoreCase("velocity")) {
-            this.onViolation(event.getPlayer(),event);
+            this.onViolation(event.getPlayer(), event);
         }
     }
 

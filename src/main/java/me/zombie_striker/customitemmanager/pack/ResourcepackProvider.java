@@ -6,6 +6,7 @@ import org.jetbrains.annotations.Nullable;
 public interface ResourcepackProvider {
 
     String getFor(@Nullable Player player);
+
     Object serialize();
 
 }

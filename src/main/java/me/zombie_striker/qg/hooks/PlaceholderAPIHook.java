@@ -4,7 +4,6 @@ import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import me.zombie_striker.qg.QAMain;
 import me.zombie_striker.qg.api.QualityArmory;
 import me.zombie_striker.qg.guns.Gun;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,7 +38,7 @@ public class PlaceholderAPIHook extends PlaceholderExpansion {
             case "ammo_type":
                 return gun.getAmmoType().getDisplayName();
             case "ammo_amount":
-                return String.valueOf(QualityArmory.getAmmoInInventory(player,gun.getAmmoType()));
+                return String.valueOf(QualityArmory.getAmmoInInventory(player, gun.getAmmoType()));
         }
 
         return null;

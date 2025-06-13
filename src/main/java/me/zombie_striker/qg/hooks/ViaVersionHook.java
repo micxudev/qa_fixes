@@ -14,13 +14,13 @@ public final class ViaVersionHook {
         try {
             int version = Via.getAPI().getPlayerVersion(player.getUniqueId());
             return ProtocolVersion.getProtocols()
-                    .stream()
-                    .filter(pv -> pv.getVersion() == version)
-                    .findFirst()
-                    .map(pv -> {
-                        String[] split = pv.getIncludedVersions().iterator().next().split("\\.");
-                        return split[1] + "." + (split.length > 2 ? split[2] : "0");
-                    })
+                .stream()
+                .filter(pv -> pv.getVersion() == version)
+                .findFirst()
+                .map(pv -> {
+                    String[] split = pv.getIncludedVersions().iterator().next().split("\\.");
+                    return split[1] + "." + (split.length > 2 ? split[2] : "0");
+                })
                 .orElse(XReflection.MINOR_NUMBER + "." + XReflection.PATCH_NUMBER);
         } catch (Exception | Error e) {
             return XReflection.MINOR_NUMBER + "." + XReflection.PATCH_NUMBER;

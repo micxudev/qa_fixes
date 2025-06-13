@@ -1,13 +1,12 @@
 package me.zombie_striker.qg.miscitems;
 
-import java.util.*;
-
 import me.zombie_striker.customitemmanager.CustomBaseObject;
 import me.zombie_striker.customitemmanager.CustomItemManager;
+import me.zombie_striker.customitemmanager.MaterialStorage;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import me.zombie_striker.customitemmanager.MaterialStorage;
+import java.util.*;
 
 public class MeleeItems extends CustomBaseObject {
 

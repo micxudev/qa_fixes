@@ -9,17 +9,19 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
-import java.util.*;
+import java.util.Map;
+import java.util.Objects;
 import java.util.logging.Level;
- 
+
 public class CommentYamlConfiguration extends YamlConfiguration {
     private File file;
-	
+
     private Map<Integer, String> comments = Maps.newHashMap();
+
     @Override
     public void load(Reader reader) throws IOException, InvalidConfigurationException {
         StringBuilder builder = new StringBuilder();
- 
+
         String line;
         try (BufferedReader input = reader instanceof BufferedReader ? (BufferedReader) reader : new BufferedReader(reader)) {
             int index = 0;
@@ -34,7 +36,7 @@ public class CommentYamlConfiguration extends YamlConfiguration {
         }
         this.loadFromString(builder.toString());
     }
- 
+
     @Override
     public void save(File file) throws IOException {
         Objects.requireNonNull(file, "File cannot be null");
@@ -57,14 +59,14 @@ public class CommentYamlConfiguration extends YamlConfiguration {
             }
             data = stringBuilder.toString().substring(1);
         }
- 
+
         try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file), Charsets.UTF_8)) {
             writer.write(data);
         }
     }
 
     public Object getOrSet(String path, Object val) {
-        if(!this.contains(path)){
+        if (!this.contains(path)) {
             this.set(path, val);
             if (file != null) {
                 try {
@@ -75,7 +77,7 @@ public class CommentYamlConfiguration extends YamlConfiguration {
         }
         return this.get(path);
     }
- 
+
     @Override
     @Deprecated
     protected @NotNull String buildHeader() {
@@ -94,12 +96,12 @@ public class CommentYamlConfiguration extends YamlConfiguration {
         Objects.requireNonNull(file, "File cannot be null");
         CommentYamlConfiguration config = new CommentYamlConfiguration();
         config.setFile(file);
-        if(!file.exists())
-			try {
-				file.createNewFile();
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
+        if (!file.exists())
+            try {
+                file.createNewFile();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
         try {
             config.load(file);
         } catch (FileNotFoundException e) {
@@ -107,7 +109,7 @@ public class CommentYamlConfiguration extends YamlConfiguration {
         } catch (IOException | InvalidConfigurationException var4) {
             Bukkit.getLogger().log(Level.SEVERE, "Cannot load " + file, var4);
         }
- 
+
         return config;
     }
 }

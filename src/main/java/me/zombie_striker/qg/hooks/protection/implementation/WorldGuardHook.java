@@ -27,7 +27,7 @@ public class WorldGuardHook implements ProtectionHook {
     public boolean canPvp(@NotNull Location location) {
         for (IWrappedRegion k : worldGuard.getRegions(location)) {
             Object wrappedState = k.getFlag(pvp).orElse(WrappedState.ALLOW);
-            if(wrappedState.getClass().equals(Optional.class)) {
+            if (wrappedState.getClass().equals(Optional.class)) {
                 wrappedState = ((Optional<WrappedState>) wrappedState).orElse(WrappedState.ALLOW);
             }
             if (wrappedState.equals(WrappedState.DENY)) return false;

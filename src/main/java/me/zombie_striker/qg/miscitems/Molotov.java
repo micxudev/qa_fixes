@@ -45,15 +45,15 @@ public class Molotov extends Grenade {
                         double xoffset = ((Math.random() * 2) - 1) * radius;
                         double zoffset = ((Math.random() * 2) - 1) * radius;
                         h.getHolder().getWorld().spawnParticle(Particle.FLAME,
-                                h.getHolder().getLocation().clone().add(xoffset, 0, zoffset), 0);
+                            h.getHolder().getLocation().clone().add(xoffset, 0, zoffset), 0);
                     }
                     for (int i = 0; i < 4; i++) {
                         //TODO: Check: This goes in three directions, and one stays still
                         h.getHolder().getWorld().spawnParticle(org.bukkit.Particle.LAVA,
-                                h.getHolder().getLocation(), i);
+                            h.getHolder().getLocation(), i);
                     }
                     h.getHolder().getWorld().playSound(h.getHolder().getLocation(), WeaponSounds.HISS.getSoundName(), 2f,
-                            1f);
+                        1f);
                 } catch (Error e3) {
                     h.getHolder().getWorld().playEffect(h.getHolder().getLocation(), Effect.valueOf("CLOUD"), 0);
                     h.getHolder().getWorld().playSound(h.getHolder().getLocation(), Sound.valueOf("EXPLODE"), 3, 0.7f);

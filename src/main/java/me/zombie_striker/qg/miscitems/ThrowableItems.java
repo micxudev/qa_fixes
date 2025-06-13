@@ -1,58 +1,59 @@
 package me.zombie_striker.qg.miscitems;
 
-import java.util.HashMap;
-import java.util.UUID;
-
 import org.bukkit.entity.Entity;
 import org.bukkit.scheduler.BukkitTask;
 
+import java.util.HashMap;
+import java.util.UUID;
+
 public interface ThrowableItems {
 
-	HashMap<Entity, ThrowableHolder> throwItems = new HashMap<>();
-	
-	class ThrowableHolder {
-		private Entity holder;
-		private UUID owner;
-		private Grenade grenade;
+    HashMap<Entity, ThrowableHolder> throwItems = new HashMap<>();
 
-		private BukkitTask timer;
+    class ThrowableHolder {
+        private Entity holder;
+        private UUID owner;
+        private Grenade grenade;
 
-		public ThrowableHolder(UUID owner, Entity holder, Grenade grenade) {
-			this.holder = holder;
-			this.owner = owner;
-			this.grenade = grenade;
-		}
+        private BukkitTask timer;
 
-		public void setHolder(Entity e) {
-			this.holder = e;
-		}
+        public ThrowableHolder(UUID owner, Entity holder, Grenade grenade) {
+            this.holder = holder;
+            this.owner = owner;
+            this.grenade = grenade;
+        }
 
-		public Entity getHolder() {
-			return holder;
-		}
+        public void setHolder(Entity e) {
+            this.holder = e;
+        }
 
-		public void setTimer(BukkitTask bt) {
-			this.timer = bt;
-		}
+        public Entity getHolder() {
+            return holder;
+        }
 
-		public BukkitTask getTask() {
-			return timer;
-		}
+        public void setTimer(BukkitTask bt) {
+            this.timer = bt;
+        }
 
-		public UUID getOwner() {
-			return owner;
-		}
+        public BukkitTask getTask() {
+            return timer;
+        }
 
-		public Grenade getGrenade() {
-			return grenade;
-		}
+        public UUID getOwner() {
+            return owner;
+        }
 
-		public void setGrenade(Grenade grenade) {
-			this.grenade = grenade;
-		}
-	}
+        public Grenade getGrenade() {
+            return grenade;
+        }
+
+        public void setGrenade(Grenade grenade) {
+            this.grenade = grenade;
+        }
+    }
 
 
-	double getThrowSpeed();
-	void setThrowSpeed(double throwspeed);
+    double getThrowSpeed();
+
+    void setThrowSpeed(double throwspeed);
 }

@@ -60,9 +60,9 @@ public class StickyGrenade extends Grenade {
                         }
                         try {
                             holder.getHolder().getWorld().spawnParticle(XParticle.EXPLOSION_EMITTER.get(),
-                                    holder.getHolder().getLocation(), 0);
+                                holder.getHolder().getLocation(), 0);
                             holder.getHolder().getWorld().playSound(holder.getHolder().getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 8,
-                                    0.7f);
+                                0.7f);
                         } catch (Error e3) {
                             holder.getHolder().getWorld().playEffect(holder.getHolder().getLocation(), Effect.valueOf("CLOUD"), 0);
                             holder.getHolder().getWorld().playSound(holder.getHolder().getLocation(), Sound.valueOf("EXPLODE"), 8, 0.7f);

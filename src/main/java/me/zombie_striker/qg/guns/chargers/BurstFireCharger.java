@@ -49,7 +49,7 @@ public class BurstFireCharger implements ChargingHandler {
 
                 int amount = Gun.getAmount(player);
                 if (shotCurrently >= g.getBulletsPerShot() || slotUsed != player.getInventory().getHeldItemSlot()
-                        || amount <= 0) {
+                    || amount <= 0) {
                     if (shooters.containsKey(player.getUniqueId()))
                         shooters.remove(player.getUniqueId()).cancel();
                     return;

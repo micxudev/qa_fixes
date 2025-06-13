@@ -84,9 +84,9 @@ public class ProxyMine extends Grenade {
                         }
                         try {
                             h.getHolder().getWorld().spawnParticle(XParticle.EXPLOSION_EMITTER.get(),
-                                    h.getHolder().getLocation(), 0);
+                                h.getHolder().getLocation(), 0);
                             h.getHolder().getWorld().playSound(h.getHolder().getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 8,
-                                    0.7f);
+                                0.7f);
                         } catch (Error e3) {
                             h.getHolder().getWorld().playEffect(h.getHolder().getLocation(), Effect.valueOf("CLOUD"), 0);
                             h.getHolder().getWorld().playSound(h.getHolder().getLocation(), Sound.valueOf("EXPLODE"), 8, 0.7f);

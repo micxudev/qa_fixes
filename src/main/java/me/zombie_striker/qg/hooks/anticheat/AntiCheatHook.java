@@ -10,8 +10,6 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.Listener;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.InvocationTargetException;
-
 public abstract class AntiCheatHook implements Listener {
 
     public AntiCheatHook() {
@@ -24,7 +22,7 @@ public abstract class AntiCheatHook implements Listener {
         Gun gun = QualityArmory.getGunInHand(player);
         if (gun == null) return;
 
-        if (GunUtil.isDelay(gun,player)) {
+        if (GunUtil.isDelay(gun, player)) {
             cancellable.setCancelled(true);
             QAMain.DEBUG("Cancelled " + this.getName() + " violation because player is using gun.");
         }

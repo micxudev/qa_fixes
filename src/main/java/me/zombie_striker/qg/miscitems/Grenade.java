@@ -1,12 +1,13 @@
 package me.zombie_striker.qg.miscitems;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.cryptomorin.xseries.particles.XParticle;
 import me.zombie_striker.customitemmanager.CustomBaseObject;
 import me.zombie_striker.customitemmanager.CustomItemManager;
+import me.zombie_striker.customitemmanager.MaterialStorage;
+import me.zombie_striker.qg.QAMain;
 import me.zombie_striker.qg.api.QAThrowableExplodeEvent;
+import me.zombie_striker.qg.guns.utils.WeaponSounds;
+import me.zombie_striker.qg.handlers.ExplosionHandler;
 import me.zombie_striker.qg.hooks.protection.ProtectionHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
@@ -19,10 +20,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import me.zombie_striker.qg.QAMain;
-import me.zombie_striker.customitemmanager.MaterialStorage;
-import me.zombie_striker.qg.guns.utils.WeaponSounds;
-import me.zombie_striker.qg.handlers.ExplosionHandler;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Grenade extends CustomBaseObject implements ThrowableItems {
     private static final List<Entity> GRENADES = new ArrayList<>();
@@ -67,7 +66,7 @@ public class Grenade extends CustomBaseObject implements ThrowableItems {
                 thrower.setItemInHand(grenadeStack);
             }
             Item grenade = holder.getHolder().getWorld().dropItem(holder.getHolder().getLocation().add(0, 1.5, 0),
-                    temp);
+                temp);
             grenade.setPickupDelay(Integer.MAX_VALUE);
             grenade.setVelocity(thrower.getLocation().getDirection().normalize().multiply(getThrowSpeed()));
             holder.setHolder(grenade);
@@ -131,9 +130,9 @@ public class Grenade extends CustomBaseObject implements ThrowableItems {
                 }
                 try {
                     h.getHolder().getWorld().spawnParticle(XParticle.EXPLOSION_EMITTER.get(),
-                            h.getHolder().getLocation(), 0);
+                        h.getHolder().getLocation(), 0);
                     h.getHolder().getWorld().playSound(h.getHolder().getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 8,
-                            0.7f);
+                        0.7f);
                 } catch (Error e3) {
                     h.getHolder().getWorld().playEffect(h.getHolder().getLocation(), Effect.valueOf("CLOUD"), 0);
                     h.getHolder().getWorld().playSound(h.getHolder().getLocation(), Sound.valueOf("EXPLODE"), 8, 0.7f);

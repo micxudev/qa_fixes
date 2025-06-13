@@ -9,19 +9,19 @@ import org.bukkit.event.Listener;
 
 public class ChestShopHandler implements Listener {
 
-	@EventHandler
-	public void onParseShop(ItemParseEvent e){
-		CustomBaseObject base;
-		if((base =QualityArmory.getCustomItemByName(e.getItemString()))!=null){
-			e.setItem(QualityArmory.getCustomItemAsItemStack(base));
-		}
-	}
+    @EventHandler
+    public void onParseShop(ItemParseEvent e) {
+        CustomBaseObject base;
+        if ((base = QualityArmory.getCustomItemByName(e.getItemString())) != null) {
+            e.setItem(QualityArmory.getCustomItemAsItemStack(base));
+        }
+    }
 
-	@EventHandler
-	public void onString(ItemStringQueryEvent e) {
-		CustomBaseObject customItem = QualityArmory.getCustomItem(e.getItem());
-		if (customItem != null && customItem.getName() != null) {
-			e.setItemString(customItem.getName());
-		}
-	}
+    @EventHandler
+    public void onString(ItemStringQueryEvent e) {
+        CustomBaseObject customItem = QualityArmory.getCustomItem(e.getItem());
+        if (customItem != null && customItem.getName() != null) {
+            e.setItemString(customItem.getName());
+        }
+    }
 }

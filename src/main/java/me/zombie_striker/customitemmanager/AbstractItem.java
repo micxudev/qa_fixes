@@ -7,12 +7,13 @@ import java.io.File;
 
 public abstract class AbstractItem {
 
-	public abstract ItemStack getItem(Material material, int data, int variant);
-	public abstract ItemStack getItem(MaterialStorage materialStorage);
+    public abstract ItemStack getItem(Material material, int data, int variant);
 
-	public abstract boolean isCustomItem(ItemStack is);
+    public abstract ItemStack getItem(MaterialStorage materialStorage);
 
-	public abstract void initItems(File dataFolder);
+    public abstract boolean isCustomItem(ItemStack is);
+
+    public abstract void initItems(File dataFolder);
 
 
 }

@@ -1,10 +1,9 @@
 package me.zombie_striker.qg.armor;
 
-import java.util.List;
-
+import me.zombie_striker.customitemmanager.MaterialStorage;
 import org.bukkit.inventory.ItemStack;
 
-import me.zombie_striker.customitemmanager.MaterialStorage;
+import java.util.List;
 
 public class Helmet extends ArmorObject {
 

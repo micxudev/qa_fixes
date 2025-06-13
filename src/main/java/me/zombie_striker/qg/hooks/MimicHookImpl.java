@@ -20,8 +20,8 @@ public class MimicHookImpl implements BukkitItemsRegistry {
     @Override
     public Collection<String> getKnownIds() {
         return QualityArmory.getCustomItemsAsList().stream()
-                .map(CustomBaseObject::getName)
-                .collect(Collectors.toList());
+            .map(CustomBaseObject::getName)
+            .collect(Collectors.toList());
     }
 
     @Nullable

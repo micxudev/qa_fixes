@@ -13,15 +13,15 @@ public class QuickShopHook implements Listener {
     private volatile Location protectionCheckingLocation = null;
 
     @EventHandler
-    public void onQuickShopProtectionChecking(ShopProtectionCheckEvent event){
-        if(event.getStatus().equals(ProtectionCheckStatus.BEGIN)) {
+    public void onQuickShopProtectionChecking(ShopProtectionCheckEvent event) {
+        if (event.getStatus().equals(ProtectionCheckStatus.BEGIN)) {
             protectionCheckingLocation = event.getLocation();
         }
     }
 
     @EventHandler(priority = EventPriority.HIGH)
-    public void onBlockBreak(BlockBreakEvent event){
-        if(protectionCheckingLocation != null && event.getBlock().getLocation().equals(protectionCheckingLocation)) {
+    public void onBlockBreak(BlockBreakEvent event) {
+        if (protectionCheckingLocation != null && event.getBlock().getLocation().equals(protectionCheckingLocation)) {
             protectionCheckingLocation = null;
 
             if (QualityArmory.isCustomItem(event.getPlayer().getInventory().getItemInMainHand()))
